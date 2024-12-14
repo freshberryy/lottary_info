@@ -169,6 +169,40 @@
                 longitude: <%= store.getLongitude() != null ? store.getLongitude() : "null" %>
             },
             <% } %>
+            
+            
+            
+            // 2. 전체 판매점 데이터 로드
+            var allStores = [
+                <% 
+                    LotteryStoreDAO dao = new LotteryStoreDAO();
+                    java.util.List<LotteryStore> stores = dao.getAllLotteryStores();
+                    for (LotteryStore store : stores) {
+                %>
+                {
+                    name: "<%= store.getName() %>",
+                    address: "<%= store.getRoadAddress() %>",
+                    latitude: <%= store.getLatitude() != null ? store.getLatitude() : "null" %>,
+                    longitude: <%= store.getLongitude() != null ? store.getLongitude() : "null" %>
+                },
+                <% } %>
+            ];
+
+            // 3. 1등 당첨 판매점 데이터 로드
+            var winningStores = [
+                <% 
+                    WinningStoresDAO winningDao = new WinningStoresDAO();
+                    java.util.List<WinningStore> winningStoresList = winningDao.getAllWinningStores();
+                    for (WinningStore store : winningStoresList) {
+                %>
+                {
+                    name: "<%= store.getName() %>",
+                    address: "<%= store.getRegion() %>",
+                    winCount: <%= store.getWinCount() %>,
+                    latitude: <%= store.getLatitude() != null ? store.getLatitude() : "null" %>,
+                    longitude: <%= store.getLongitude() != null ? store.getLongitude() : "null" %>
+                },
+                <% } %>
         ];
 
         locations.forEach(function(location) {
