@@ -9,7 +9,8 @@
 </head>
 <body>
     <h1>복권 판매점 지도</h1>
-    <div id="map" style="width:100%;height:500px;"></div>
+    <h3>출처 기획재정부, 20240531</h3>
+    <div id="map" style="width:50%;height:500px;"></div>
 
     <script>
         // 1. 지도를 생성합니다.
