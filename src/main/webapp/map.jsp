@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>복권 판매점 지도</h1>
-    <h3>출처 기획재정부, 20240531</h3>
+    <h3>출처 기획재정부, 20240531 기준</h3>
     <div id="map" style="width:50%;height:500px;"></div>
 
     <script>
